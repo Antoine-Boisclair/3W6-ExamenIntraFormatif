@@ -1,4 +1,5 @@
 ﻿using Halloween.Models;
+using System.ComponentModel.DataAnnotations;
 using System.Security.Policy;
 
 namespace Halloween.ViewModels
@@ -7,5 +8,7 @@ namespace Halloween.ViewModels
     {
         public Sorciere Sorciere { get; set; }
         // TODO: Question 1
+        [Display(Name ="NombrePotions")]
+        public int? NbPotion { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace Halloween.Controllers
         public IActionResult Index()
         {
             //Modifiez ici
-            List<Sorciere> ListeSorciere =  _context.Sorcieres.ToList();
+            List<Sorciere> ListeSorciere =  _context.Sorcieres.OrderBy(o => o.Origine).ThenBy(n => n.Nom).ToList();
 
             return View(ListeSorciere);
         }
@@ -36,11 +36,13 @@ namespace Halloween.Controllers
             Sorcieres_VM sorcieres_VM = new Sorcieres_VM();
             sorcieres_VM.Sorciere = await _context.Sorcieres.FirstOrDefaultAsync(p => p.Id == id);
             // TODO: Question 1
+            
             if (sorcieres_VM == null)
             {
                 return NotFound();
             }
 
+            sorcieres_VM.NbPotion = _context.Potions.Count(p => p.Sorciere_Id == id);
             return View(sorcieres_VM);
         }
 
