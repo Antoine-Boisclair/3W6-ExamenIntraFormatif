@@ -23,7 +23,7 @@ namespace Halloween.Controllers
         // GET: Potions
         public async Task<IActionResult> Index()
         {
-            var halloweenContext = _context.Potions.ToListAsync();
+            var halloweenContext = _context.Potions.Include(h => h.Creatrice).ToListAsync();
             return View(await halloweenContext);
         }
 
@@ -64,6 +64,7 @@ namespace Halloween.Controllers
             Grimoire_VM grimoire_VM = new Grimoire_VM();
             grimoire_VM.Sorciere = sorciere;
             //COMPLÉTEZ ICI
+            grimoire_VM.ListePotions = await _context.Potions.Where(p => p.Sorciere_Id == sorciere.Id).ToListAsync();
             return View(grimoire_VM);
         }
 

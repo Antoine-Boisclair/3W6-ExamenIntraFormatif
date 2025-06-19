@@ -17,7 +17,7 @@
             </th>
             <th>
                @* MODIFIEZ ICI *@
-               CRÉATRICE
+               Créatrice
             </th>
             <th></th>
         </tr>
@@ -30,7 +30,7 @@
             </td>
             <td>
                     @* MODIFIEZ ICI *@
-              NOM DE LA SOCIÈRE CRÉATRICE
+                @Html.DisplayFor(modelItem => item.Creatrice.Nom)
             </td>
             <td>
                     <a class="btn btn-info mx-2" asp-action="Edit" asp-route-id="@item.Id">Modifier</a>
