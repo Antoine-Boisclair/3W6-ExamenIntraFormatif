@@ -7,8 +7,13 @@ namespace MonApp_MVC.Entities
     {
         [Key]
         public int Id { get; set; }
+        [Required]
+        [StringLength(15, MinimumLength =5)]
         public string Titre { get; set; }
-        public DateTime DateDebut { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime? DateDebut { get; set; }
+        [ValidateNever]
+        public List<Equipe>? Equipes { get; set; }
 
   }
 }

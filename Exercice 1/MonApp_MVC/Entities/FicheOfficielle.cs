@@ -8,9 +8,11 @@ namespace MonApp_MVC.Entities
     {
         [Key]
         public int Id { get; set; }
-        public string Biographie { get; set; }
+        public string? Biographie { get; set; }
+        [Required]
+        [StringLength(30)]
         public string Photo { get; set; }
-
-
+        public int JoueurId { get; set; }
+        public Joueur Joueur { get; set; }
     }
 }

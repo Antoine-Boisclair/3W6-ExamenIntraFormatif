@@ -22,5 +22,10 @@ namespace MonApp_MVC.Data
             
    
         }
+
+        public DbSet<Equipe> Equipes { get; set; }
+        public DbSet<FicheOfficielle> FicheOfficielles { get; set; }
+        public DbSet<Joueur> Joueurs { get; set; }
+        public DbSet<Tournois> Tournois { get; set; }
     }
 }
