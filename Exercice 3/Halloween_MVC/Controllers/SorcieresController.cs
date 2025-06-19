@@ -24,7 +24,7 @@ namespace Halloween.Controllers
         // GET: Sorcieres
         public async Task<IActionResult> Index()
         {
-            List<Sorciere> ListeSorciere = await _context.Sorcieres.ToListAsync();
+            List<Sorciere> ListeSorciere = await _context.Sorcieres.Where(o => o.Origine == "Acadie" || o.Origine == "Roi Arthur").ToListAsync();
 
             return View(ListeSorciere);
         }

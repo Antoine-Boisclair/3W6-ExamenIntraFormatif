@@ -49,11 +49,15 @@ namespace Halloween.Controllers
         }
 
         // GET: Potions/Create
-        public IActionResult Create()
+        public async Task<IActionResult> CreateAsync()
         {
-            Potion potion = new Potion();
-            ViewData["Sorciere_Id"] = new SelectList(_context.Sorcieres, "Id", "Id");
-            return View(potion);
+            PotionVM potionVM = new PotionVM();
+            potionVM.ListeSorcieres = await _context.Sorcieres.Select(t => new SelectListItem
+            {
+                Text = t.Nom,
+                Value = t.Id.ToString()
+            }).OrderBy(s => s.Text).ToListAsync();
+            return View(potionVM);
         }
 
         // POST: Potions/Create

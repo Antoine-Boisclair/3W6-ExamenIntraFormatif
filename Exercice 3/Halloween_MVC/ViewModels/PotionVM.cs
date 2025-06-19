@@ -6,6 +6,6 @@ namespace Halloween.ViewModels
     public class PotionVM
     {
         public Potion Potion { get; set; }
-        public SelectList ListeSorcieres { get; set; }
+        public IEnumerable<SelectListItem> ListeSorcieres { get; set; }
     }
 }
