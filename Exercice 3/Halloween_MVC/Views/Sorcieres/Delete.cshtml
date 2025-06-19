@@ -1,0 +1,39 @@
+﻿@model Halloween.Models.Sorciere
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Supprimer</h1>
+
+<h3>Voulez-vous vraiment supprimer cet élément?</h3>
+<div>
+    <h4>Sorciere</h4>
+    <hr />
+    <dl class="row bg-light">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Origine)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Origine)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-primary form-control" asp-route-id="@Model.Id">Supprimer</button>
+            </div>
+            <div class="col">
+                <a asp-action="Index" class="btn btn-warning form-control">Retour à la liste</a>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+﻿@model Halloween.Models.Potion
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<div class="bg-secondary border-2">
+    <div>
+    <h4>Potion</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateCreation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateCreation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Creatrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Creatrice.Id)
+        </dd>
+    </dl>
+</div>
+<div class="row">
+    <div class="col">
+        <a class="btn btn-info form-control" asp-route-id="@Model.Id">Modifier</a>
+    </div>
+    <div class="col">
+        <a asp-action="Index" class="btn btn-warning form-control">Retour à la liste</a>
+    </div>
+</div>
+</div>

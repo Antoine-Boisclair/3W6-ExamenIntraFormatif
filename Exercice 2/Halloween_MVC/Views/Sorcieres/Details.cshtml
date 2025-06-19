@@ -1,0 +1,43 @@
+﻿@model Halloween.ViewModels.Sorcieres_VM
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div class="bg-secondary border-2">
+    <div>
+    <h4>Sorciere</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Sorciere.Nom)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Sorciere.Nom)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Sorciere.Origine)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Sorciere.Origine)
+        </dd>
+    @*     MODIFIER CI-DESSOUS pour la question 1 *@
+            <dt class="col-sm-4">
+               NOMBRE DE POTIONS label
+            </dt>
+            <dd class="col-sm-8">
+                NOMBRE DE POTIONS valeur
+            </dd>
+    </dl>
+</div>
+<div class="row">
+    <div class="col">
+        <a class="btn btn-info form-control" asp-route-id="@Model.Sorciere.Id">Modifier</a>
+    </div>
+    <div class="col">
+        <a asp-action="Index" class="btn btn-warning form-control">Retour à la liste</a>
+    </div>
+</div>
+</div>

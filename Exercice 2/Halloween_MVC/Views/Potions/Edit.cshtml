@@ -1,0 +1,42 @@
+﻿@model Halloween.Models.Potion
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Modifier</h1>
+
+<h4>Potion</h4>
+<hr />
+
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nom" class="control-label"></label>
+                <input asp-for="Nom" class="form-control" />
+                <span asp-validation-for="Nom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateCreation" class="control-label"></label>
+                <input asp-for="DateCreation" class="form-control" />
+                <span asp-validation-for="DateCreation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sorciere_Id" class="control-label"></label>
+                <select asp-for="Sorciere_Id" class="form-control" asp-items="ViewBag.Sorciere_Id"></select>
+                <span asp-validation-for="Sorciere_Id" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-info form-control" asp-route-id="@Model.Id">Modifier</button>
+                </div>
+                <div class="col">
+                    <a asp-action="Index" class="btn btn-warning form-control">Retour à la liste</a>
+                </div>
+            </div>
+        </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

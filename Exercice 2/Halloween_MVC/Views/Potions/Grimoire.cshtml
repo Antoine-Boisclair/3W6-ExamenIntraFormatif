@@ -1,0 +1,37 @@
+﻿@model Halloween.ViewModels.Grimoire_VM
+
+@{
+    ViewData["Title"] = "Grimoire";
+}
+
+<h1>Grimoire</h1>
+
+<div class="bg-secondary border-2">
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.Sorciere.Nom)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Sorciere.Nom)
+            </dd>
+        </dl>
+        <div class="row border-4 border-warning">
+            <h5 class="text-primary">Liste des potions</h5>
+            <div class="">
+                @*METTRE LA VUE PARTIELLE DE LA LISTE DES POTIONS ICI*@
+            
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-info form-control" asp-route-id="@Model.Sorciere.Id">Modifier</a>
+        </div>
+        <div class="col">
+            <a asp-action="Index" class="btn btn-warning form-control">Retour à la liste</a>
+        </div>
+    </div>
+</div>
